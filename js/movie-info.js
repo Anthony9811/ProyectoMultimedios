@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 id="fondo"
                 class=" 
                 lg:w-full
-                lg:h-1/5 
-                lg:opacity-10
+                lg:h-full 
+                lg:opacity-20
                 object-cover
                 sm:h-48"
                 src="https://image.tmdb.org/t/p/w1280${data.backdrop_path}"/>
         
-                <div id="header" class="flex absolute mt-8">
+                <div id="header" class="flex absolute mt-10">
                     <img
                         alt="${data.original_title} poster"
                         id="cuadro"
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
                         <li class="ml-7">
                           <h6 class="text-white font-semibold">
-                            ${data.runtime}mins
+                            ${data.runtime} mins
                           </h6>
                         </li>
                       </ul>
@@ -83,8 +83,13 @@ document.addEventListener('DOMContentLoaded', function () {
                       w-16
                       my-3
                       bg-green-500
-                      border-1 rounded-full"
-                      id="calificacion">${data.vote_average}
+                      border-1 rounded-full
+                      text-center"
+                      id="calificacion">
+                      <div class="relative top-3 text-2xl text-white font-semibold">
+                      ${data.vote_average}
+                      </div>
+
                       </div>
                     </div>
                     
