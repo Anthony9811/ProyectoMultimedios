@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const API_POPULARES_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
-  const API_TOP_RATED_URL = BASE_URL + '/movie/top_rated?' + API_KEY + '&language=en-US&page=1';
-  const API_PROXIMAMENTE_URL = BASE_URL + '/movie/upcoming?' + API_KEY + '&language=en-US&page=1';
+  const API_TOP_RATED_URL = BASE_URL + '/movie/top_rated?' + API_KEY + '&language=es-ES&page=1';
+  const API_PROXIMAMENTE_URL = BASE_URL + '/movie/upcoming?' + API_KEY + '&language=es-ES&page=1';
 
   crearTarjetas(API_POPULARES_URL, 'populares');
   crearTarjetas(API_TOP_RATED_URL, 'mejorValoradas');

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(queryString);
     const ID = queryString.substring( queryString.indexOf('=') + 1 );
     
-    const API_URL = BASE_URL + ID + '?' + API_KEY +'&language=en-US';
+    const API_URL = BASE_URL + ID + '?' + API_KEY +'&language=es-ES';
     console.log(API_URL);
     verDetalles(API_URL);
     
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         h-96 
                         w-45 
                         ml-20"
-                        src="https://image.tmdb.org/t/p/w1280${data.poster_path}"/>
+                        src="https://image.tmdb.org/t/p/original${data.poster_path}"/>
                     
                 <div id="body" class="
                 flex 
@@ -113,10 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
                       ">
                        ${data.overview}
                       </p>
-        
+
+                      <div class="hidden mt-16 lg:grid">
+                      <span class="text-2xl text-center text-white font-semibold border-b-2 w-10/12">Similares</span>
                     </div>
-        
-                    
+
+                    </div>
+                           
                         </div>
             
             </div>
