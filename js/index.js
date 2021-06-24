@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     a.setAttribute('href', `/movie-info.html?id=${id}`)
     a.classList.add('h-23', 'bg-transparent',
       'flex', 'justify-center', 'lg:inline-block',
-      'items-start', 'pt-5', 'lg:pt-14', 'md:px-5');
+      'items-start', 'mt-8', 'lg:mt-12', 'md:mx-5');
 
     const divPrimero = document.createElement('div');
     divPrimero.classList.add(
