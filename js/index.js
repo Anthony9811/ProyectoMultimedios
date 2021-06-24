@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const BASE_URL = 'https://api.themoviedb.org/3';
 
 
-  const API_POPULARES_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+  const API_POPULARES_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=es-ES&page=1';
   const API_TOP_RATED_URL = BASE_URL + '/movie/top_rated?' + API_KEY + '&language=es-ES&page=1';
   const API_PROXIMAMENTE_URL = BASE_URL + '/movie/upcoming?' + API_KEY + '&language=es-ES&page=1';
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'bg-black',
       'px-32',
       'py-48',
-      'opacity-20',
+      'opacity-30',
       'z-20'
     );
 
@@ -113,6 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const h4 = document.createElement('h4');
     h4.classList.add(
+      'w-60',
+      'truncate',
       'text-lg',
       'lg:text-xl',
       'lg:z-30',
