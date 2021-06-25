@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="build/style.css" />
+    <title>Genero</title>
+</head>
+<body class="bg-blueGray-900">
+    
+<!-- ENCABEZADO-->
+<nav id="header" class="
+w-full
+z-30
+top-10
+lg:fixed
+lg:top-0
+lg:z-40
+lg:opacity-100
+py-1
+lg:px-16
+bg-white
+md:bg-blueGray-300
+shadow-lg
+border-b border-blue-400
+">
+  <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
+    <label for="menu-toggle" class="cursor-pointer md:hidden block">
+      <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 20 20">
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
+
+    <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+      <nav>
+        <ul class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
+          <li>
+            <div class="hidden md:block md:pl-4">
+              <img class="" src="https://img.icons8.com/nolan/64/hitfilm.png" />
+            </div>
+          </li>
+
+          <div class="dropdown inline-block relative">
+            <a href="index.html"
+              class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
+              Películas
+            </a>
+          </div>
+
+          <div class="dropdown inline-block relative">
+            <a href="#"
+              class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
+              <span>Series</span>
+            </a>
+          </div>
+
+          <div class="dropdown inline-block relative">
+            <a href="genero.html"
+              class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
+              <span>Géneros </span>
+              <span>
+                <svg class="fill-current mt-1 ml-1 h-4 w-4 transform group-hover:-rotate-180
+                transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </ul>
+      </nav>
+    </div>
+    <!-- BOTONES-->
+
+    <div class="hidden md:order-3 md:flex md:flex-wrap md:items-center md:justify-end md:mr-4" id="nav-content">
+      <div class="auth flex items-center w-full md:w-full">
+        <!-- <button class="bg-transparent text-gray-800 p-2 rounded mr-4 hover:bg-gray-100 hover:text-gray-700">Ingresar</button> -->
+
+        <!--BTN BUSQUEDA -->
+        <div class="relative border-2 rounded-full border-gray-300  text-gray-600">
+          <input type="search" placeholder="Buscar..."
+            class="bg-white h-10 px-5 pr-8 rounded-full text-sm focus:outline-none">
+          <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+              viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+              width="512px" height="512px">
+              <path
+                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+            </svg>
+          </button>
+          <!--BTN BUSQUEDA -->
+        </div>
+      </div>
+    </div>
+    <!--FIN BOTONES-->
+    <div class="
+  md:hidden
+  place-content-center
+    order-2
+    md:order-3
+    flex flex-wrap
+    items-center
+    justify-center
+    mr-0
+    md:mr-4
+  " id="nav-content">
+      <div class="auth flex items-center w-full md:w-full md:hidden">
+        <div class="group inline-block">
+          <button class="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32">
+            <span class="pr-1 font-semibold flex-1">Trending Now</span>
+            <span>
+              <svg class="fill-current h-4 w-4 transform group-hover:-rotate-180
+              transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="
+place-content-center
+order-2
+md:order-3
+flex flex-wrap
+items-center
+justify-center
+mr-0
+md:mr-4
+md:hidden
+" id="nav-content">
+      <div class="auth flex items-center w-full md:w-full md:hidden">
+        <div class="group inline-block">
+          <button class="outline-none focus:outline-none px-3 py-1 rounded-sm flex items-center min-w-32">
+            <span class="pr-1 font-semibold flex-1"></span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- FIN DE ENCABEZADO-->    
+<main>
+
+    <div id="genero" class="
+    min-h-screen 
+    md:w-full
+    flex 
+    flex-col
+    lg:flex-row
+    lg:flex-wrap
+    lg:justify-center
+    lg:mt-28 
+    last: mb-10">
+      <div class="hidden lg:block ml-20 absolute text-3xl text-white font-bold border-b-2 w-10/12">
+        <span class="" id="tituloGenero">Pelicula por Genero</span>
+      </div>
+    </div>
+    
+</main>
+<!-- FOOTER -->
+<nav class="
+lg:hidden
+flex 
+justify-between 
+md:justify-evenly 
+fixed bottom-0 
+inset-x-0 
+w-full
+bg-white
+shadow-lg
+overflow-auto
+border-t 
+border-blue-400">
+  <a class="ml-2 w-10 h-10" href="#"><img src="https://img.icons8.com/office/40/000000/clapperboard.png" /></a>
+  <a class="h-10 w-10 pb-1 pt-1" href="#"><img
+      src="https://img.icons8.com/offices/30/000000/circled-down-2.png" /></a>
+  <a class="w-8 h-7 pb-1 pt-1" href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/time-span.png" /></a>
+  <a class="w-10 h-10 pb-1 mr-3 " href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/user.png" /></a>
+
+</nav>
+
+<!-- FOOTER ESCRITORIO-->
+<footer class="hidden lg:block footer bg-blueGray-300 relative pt-1 border-t-2 border-blue-700">
+  <div class="container mx-auto px-6">
+
+    <div class="flex mt-8">
+      <div class="mt-0 w-full px-8 flex flex-row justify-evenly">
+        <div class="flex flex-col">
+          <a href="nosotros.html" class="font-bold text-black uppercase mb-2">Acerca de</a>
+        </div>
+        <div class="flex flex-col">
+          <a href="#" class="font-bold text-black uppercase mt-0 mb-2">Ayuda</a>
+        </div>
+        <div class="flex flex-col">
+          <a href="#" class="font-bold text-black uppercase mt-0 mb-2">Contacto</a>
+        </div>
+
+      </div>
+      <div class="flex md:flex-auto md:flex-row justify-between">
+        <a class="mr-3" href="#">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172"
+              style=" fill:#000000;">
+              <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#333333">
+                  <path
+                    d="M172,30.82226c-6.4388,2.85547 -12.9056,5.01107 -20.07226,5.73894c7.16667,-4.3112 12.9056,-11.47787 15.76107,-19.3724c-7.16667,4.31119 -14.33333,7.16667 -22.19988,8.6224c-7.16667,-7.16667 -16.48893,-11.47787 -26.51106,-11.47787c-19.3724,0 -35.13347,15.76107 -35.13347,35.10547c0,2.88346 0,5.73893 0.72786,7.89453c-29.39453,-1.42774 -55.17773,-15.06119 -72.39453,-36.56119c-3.58333,5.03906 -5.01107,11.47786 -5.01107,17.91667c0,12.20573 6.43881,22.95573 15.76107,29.39453c-5.73893,-0.72786 -11.44987,-2.1556 -15.76107,-4.31119c0,0 0,0 0,0.72786c0,17.18881 12.17774,31.52214 27.93881,34.4056c-2.85547,0.69988 -5.71094,1.42774 -9.29427,1.42774c-2.1556,0 -4.3112,0 -6.4668,-0.72786c4.31119,14.33333 17.2168,24.38346 32.97786,24.38346c-12.17773,9.32227 -27.23893,15.03321 -43.72786,15.03321c-2.85547,0 -5.73893,0 -8.5944,-0.69988c15.76107,10.02214 34.4056,15.76107 53.75,15.76107c65.22787,0 100.33333,-53.75 100.33333,-100.33333c0,-1.42774 0,-2.85547 0,-4.31119c7.16667,-5.01107 12.9056,-11.44988 17.91667,-18.61654">
+                  </path>
+                </g>
+              </g>
+            </svg>
+          </i>
+        </a>
+        <a class="mr-3" href="#">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172"
+              style=" fill:#000000;">
+              <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#333333">
+                  <path
+                    d="M86,0c-47.4935,0 -86,38.5065 -86,86c0,43.11467 31.76267,78.71867 73.143,84.93933v-62.14933h-21.27783v-22.60367h21.27783v-15.04283c0,-24.90417 12.13317,-35.83333 32.8305,-35.83333c9.9115,0 15.1575,0.73817 17.63717,1.06783v19.72983h-14.11833c-8.78633,0 -11.85367,8.33483 -11.85367,17.72317v12.35533h25.74983l-3.49017,22.60367h-22.25967v62.3285c41.97517,-5.69033 74.36133,-41.581 74.36133,-85.1185c0,-47.4935 -38.5065,-86 -86,-86z">
+                  </path>
+                </g>
+              </g>
+            </svg>
+          </i>
+        </a>
+        <a class="" href="#">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 15 172 172"
+              style=" fill:#000000;">
+              <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#333333">
+                  <path
+                    d="M57.33333,21.5c-19.78717,0 -35.83333,16.04617 -35.83333,35.83333v57.33333c0,19.78717 16.04617,35.83333 35.83333,35.83333h57.33333c19.78717,0 35.83333,-16.04617 35.83333,-35.83333v-57.33333c0,-19.78717 -16.04617,-35.83333 -35.83333,-35.83333zM129,35.83333c3.956,0 7.16667,3.21067 7.16667,7.16667c0,3.956 -3.21067,7.16667 -7.16667,7.16667c-3.956,0 -7.16667,-3.21067 -7.16667,-7.16667c0,-3.956 3.21067,-7.16667 7.16667,-7.16667zM86,50.16667c19.78717,0 35.83333,16.04617 35.83333,35.83333c0,19.78717 -16.04617,35.83333 -35.83333,35.83333c-19.78717,0 -35.83333,-16.04617 -35.83333,-35.83333c0,-19.78717 16.04617,-35.83333 35.83333,-35.83333zM86,64.5c-11.87412,0 -21.5,9.62588 -21.5,21.5c0,11.87412 9.62588,21.5 21.5,21.5c11.87412,0 21.5,-9.62588 21.5,-21.5c0,-11.87412 -9.62588,-21.5 -21.5,-21.5z">
+                  </path>
+                </g>
+              </g>
+            </svg>
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-6">
+    <div class="mt-5 border-t-2 border-gray-900 flex flex-col items-center">
+      <div class="sm:w-2/3 text-center py-6">
+        <p class="text-sm text-blue-700 font-bold mb-2">
+          © 2021 by Grupo 03
+          <br>Proyecto Grupal De Multimedios
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/index.js"></script>
+
+</body>
+</html>
