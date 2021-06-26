@@ -63,12 +63,15 @@ class="
             </a>
           </div>
         
-          <div class="dropdown inline-block relative">
-            <a href="#" class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
-              <span>Géneros </span>
+          <!-- COMIENZA EL DROPDOWN DE LOS GÉNEROS-->
+          <div class="group inline-block relative">
+            <button
+              class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center"
+            >
+              <span class="pr-1 font-semibold flex-1">Géneros</span>
               <span>
                 <svg
-                  class="fill-current mt-1 ml-1 h-4 w-4 transform group-hover:-rotate-180
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 mt-1
                   transition duration-150 ease-in-out"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -78,8 +81,41 @@ class="
                   />
                 </svg>
               </span>
-            </a>
+            </button>
+            <ul
+              class="bg-gray-800 border rounded-sm transform scale-0 group-hover:scale-100 absolute 
+            transition duration-150 ease-in-out origin-top min-w-32"
+            >
+              <li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Programming</li>
+              <li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">DevOps</li>
+              <li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Testing</li>
+            </ul>
           </div>
+          <style>
+            /* since nested groupes are not supported we have to use 
+               regular css for the nested dropdowns 
+            */
+            li>ul                 { transform: translatex(100%) scale(0) }
+            li:hover>ul           { transform: translatex(101%) scale(1) }
+            li > button svg       { transform: rotate(-90deg) }
+            li:hover > button svg { transform: rotate(-270deg) }
+          
+            /* Below styles fake what can be achieved with the tailwind config
+               you need to add the group-hover variant to scale and define your custom
+               min width style.
+               See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+               for implementation with config file
+            */
+            .group:hover .group-hover\:scale-100 { transform: scale(1) }
+            .group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
+            .scale-0 { transform: scale(0) }
+            .min-w-32 { min-width: 8rem }
+          </style>
+                      <!-- TERMINA EL DROPDOWN DE LOS GÉNEROS-->
+
+
+
+
        </ul>
     </nav>
  </div>
