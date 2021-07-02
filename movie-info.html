@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-1.11.0.js" integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw=" crossorigin="anonymous"></script>
+    <script src="js/lightslider.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="build/style.css"/>
+    <link rel="stylesheet" href="css/lightslider.css"/>
     <title>Document</title>
   </head>
 
@@ -208,12 +211,169 @@ place-content-center
     </div>
 
     <div class="hidden w-8/12 relative inset-0 py-8 ml-52 left-64 bottom-0 lg:grid">
-      <span class="text-2xl text-center text-white font-semibold border-b-2 w-10/12">Similares</span>
+      <span class="text-2xl text-center mb-3 text-white font-semibold border-b-2 w-10/12">Similares</span>
     
+      <ul id="lightSlider">
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+        <a href="#">
+          <img
+          alt="pulp_fiction"
+          class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48 cursor-pointer"
+          src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+        />
+        </a>
+      </ul>
+</div>
   <!-- Carousel Body -->
-  <div class="relative rounded-lg overflow-hidden block md:flex items-center w-10/12 bg-transparent " style="min-height: 15rem;">
+  <!-- <div id="carrusel" class="relative rounded-lg overflow-hidden block md:flex items-center w-10/12 bg-transparent " style="min-height: 15rem;">
     <div class="flex flex-row gap-5">
     <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
+    alt="pulp_fiction"
+    class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
+    src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
+  />
+
+  <img
     alt="pulp_fiction"
     class="w-45 rounded-md border-2 border-gray-300 h-60 sm:h-48"
     src="https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg"
@@ -245,13 +405,13 @@ place-content-center
     </div>
     
   </div>
-  <button class="absolute top-0 mt-36 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
+  <button id="izquierda" class="absolute top-0 mt-36 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
       <span class="block" style="transform: scale(-1);">&#x279c;</span>
     </button>
-    <button class="absolute top-0 mt-36 right-32 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
+    <button id="derecha" class="absolute top-0 mt-36 right-32 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
       <span class="block" style="transform: scale(1);">&#x279c;</span>
     </button>
-    </div>
+    </div> -->
  
  <!-- FOOTER ESCRITORIO-->
  <footer class="hidden lg:block footer bg-blueGray-300 relative pt-1 border-t-2 border-blue-700">
@@ -340,6 +500,36 @@ place-content-center
   </div>
 </footer>  
 <script src="/js/movie-info.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#lightSlider").lightSlider({
+      item:3,
+        loop:false,
+        slideMove:2,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed:600,
+        responsive : [
+            {
+                breakpoint:800,
+                settings: {
+                    item:3,
+                    slideMove:1,
+                    slideMargin:6,
+                  }
+            },
+            {
+                breakpoint:480,
+                settings: {
+                    item:2,
+                    slideMove:1
+                  }
+            }
+        ]
+    }); 
+  });
+</script>
+
   </body>
 
 </html>
