@@ -3,15 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const BASE_URL = 'https://api.themoviedb.org/3';
 
 // //Esto lectura de dtos
- const queryString = window.location.search;
- let buscar = queryString.toString("buscar");
-
- console.log(buscar); 
+ //const queryString = window.location.search;
+ //let buscar = queryString.toString("buscar");
+  
+ //let buscando = document.getElementById("buscando");
+ let buscando = document.getElementById('buscando');
+ console.log(buscando);
  //CambiarTitulo();
 
  //api link para buscar
   const API_SEARCH_URL= BASE_URL + '/search/movie?' + API_KEY + '&language=es-ES&page=1';
-  const API_Buscar_URL = API_SEARCH_URL + '&query=' + 'luca'
+  const API_Buscar_URL = API_SEARCH_URL + '&query=' + "buscando"
 
   crearTarjetas(API_Buscar_URL, 'buscador');
  
