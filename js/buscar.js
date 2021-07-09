@@ -1,257 +1,224 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
-  const BASE_URL = 'https://api.themoviedb.org/3';
+const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
-// //Esto lectura de dtos
- //const queryString = window.location.search;
- //let buscar = queryString.toString("buscar");
+function enviarBuscador(){
+  location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
+}
+
+function buscar(idBuscar) {
+  console.log(idBuscar)
+  var palabraABuscar = document.getElementById("buscando").value || idBuscar
   
- //let buscando = document.getElementById("buscando");
- let buscando = document.getElementById('buscando');
- console.log(buscando);
- //CambiarTitulo();
 
- //api link para buscar
-  const API_SEARCH_URL= BASE_URL + '/search/movie?' + API_KEY + '&language=es-ES&page=1';
-  const API_Buscar_URL = API_SEARCH_URL + '&query=' + "buscando"
+  const API_SEARCH_URL = BASE_URL + '/search/movie?' + API_KEY + '&language=es-ES&page=1';
+  const API_Buscar_URL = API_SEARCH_URL + '&query=' + palabraABuscar
 
   crearTarjetas(API_Buscar_URL, 'buscador');
- 
-  function crearTarjetas(url, idDiv) {
-    const divDeDestino = document.getElementById(idDiv);
-    
-    fetch(url).then(res => res.json())
-      .then(function (data) {
-        data.results.forEach(element => {
-          if (element.title != undefined) {
-            const card = generarTarjeta(element.id, element.title, element.poster_path, element.overview, element.release_date/*, generos*/)
-            divDeDestino.appendChild(card);
-          }
-        });
+  //location.href = "/buscar.html?";
+}
+
+function crearTarjetas(url, idDiv) {
+  const divDeDestino = document.getElementById(idDiv);
+
+  fetch(url).then(res => res.json())
+    .then(function (data) {
+      data.results.forEach(element => {
+        if (element.title != undefined) {
+          const card = generarTarjeta(element.id, element.title, element.poster_path, element.overview, element.release_date/*, generos*/)
+          divDeDestino.appendChild(card);
+        }
       });
-  }
-  function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
-    const annio = fecha.substr(0, 4);
+    });
+}
 
-    const a = document.createElement('a');
-    a.setAttribute('href', `/movie-info.html?id=${id}`)
-    a.classList.add('h-23', 'bg-transparent',
-      'flex', 'justify-center', 'lg:inline-block',
-      'items-start', 'mt-8', 'lg:mt-12', 'md:mx-5');
+function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
+  const annio = fecha.substr(0, 4);
 
-    const divPrimero = document.createElement('div');
-    divPrimero.classList.add(
-      'max-w-2xl',
-      'md:max-w-6xl',
-      'bg-white',
-      'border-2',
-      'border-gray-300',
-      'lg:bg-transparent',
-      'p-1',
-      'lg:p-0',
-      'rounded-md',
-      'tracking-wide',
-      'shadow-lg'
-    );
+  const a = document.createElement('a');
+  a.setAttribute('href', `/movie-info.html?id=${id}`)
+  a.classList.add('h-23', 'bg-transparent',
+    'flex', 'justify-center', 'lg:inline-block',
+    'items-start', 'mt-8', 'lg:mt-12', 'md:mx-5');
 
-    const divHeader = document.createElement('div');
-    divHeader.setAttribute('id', 'header');
-    divHeader.classList.add('flex', 'lg:grid');
+  const divPrimero = document.createElement('div');
+  divPrimero.classList.add(
+    'max-w-2xl',
+    'md:max-w-6xl',
+    'bg-white',
+    'border-2',
+    'border-gray-300',
+    'lg:bg-transparent',
+    'p-1',
+    'lg:p-0',
+    'rounded-md',
+    'tracking-wide',
+    'shadow-lg'
+  );
 
-    const imgPoster = document.createElement('img');
-    imgPoster.setAttribute('alt', `${title} poster`);
-    imgPoster.classList.add(
-      'h-60',
-      'w-45',
-      'lg:z-10',
-      'lg:w-64',
-      'lg:h-96',
-      'lg:opacity-85',
-      'rounded-md',
-      'border-2',
-      'border-gray-300',
-      'sm:h-48'
-    );
-    imgPoster.setAttribute('src', `https://image.tmdb.org/t/p/w1280${poster_path}`);
+  const divHeader = document.createElement('div');
+  divHeader.setAttribute('id', 'header');
+  divHeader.classList.add('flex', 'lg:grid');
 
-    const imgPlay = document.createElement('img');
-    imgPlay.setAttribute('id', 'play');
-    imgPlay.classList.add(
-      'lg:hidden',
-      'w-15',
-      'h-15',
-      'absolute',
-      'ml-14',
-      'md:ml-8',
-      'md:mt-16',
-      'mt-20',
-      'opacity-9'
-    );
-    imgPlay.setAttribute('src', 'https://img.icons8.com/flat-round/64/000000/play--v1.png')
+  const imgPoster = document.createElement('img');
+  imgPoster.setAttribute('alt', `${title} poster`);
+  imgPoster.classList.add(
+    'h-60',
+    'w-45',
+    'lg:z-10',
+    'lg:w-64',
+    'lg:h-96',
+    'lg:opacity-85',
+    'rounded-md',
+    'border-2',
+    'border-gray-300',
+    'sm:h-48'
+  );
+  imgPoster.setAttribute('src', `https://image.tmdb.org/t/p/w1280${poster_path}`);
 
-    const divTercero = document.createElement('div');
-    divTercero.classList.add(
-      'hidden',
-      'lg:inline-block',
-      'absolute',
-      'bg-black',
-      'px-32',
-      'py-48',
-      'opacity-30',
-      'z-20'
-    );
+  const imgPlay = document.createElement('img');
+  imgPlay.setAttribute('id', 'play');
+  imgPlay.classList.add(
+    'lg:hidden',
+    'w-15',
+    'h-15',
+    'absolute',
+    'ml-14',
+    'md:ml-8',
+    'md:mt-16',
+    'mt-20',
+    'opacity-9'
+  );
+  imgPlay.setAttribute('src', 'https://img.icons8.com/flat-round/64/000000/play--v1.png')
 
-    const divBody = document.createElement('div');
-    divBody.setAttribute('id', 'body');
-    divBody.classList.add(
-      'lg:absolute',
-      'flex',
-      'flex-col',
-      'ml-2',
-      'lg:ml-4',
-      'lg:mt-80',
-      'lg:text-white',
-      'lg:pt-0');
+  const divTercero = document.createElement('div');
+  divTercero.classList.add(
+    'hidden',
+    'lg:inline-block',
+    'absolute',
+    'bg-black',
+    'px-32',
+    'py-48',
+    'opacity-30',
+    'z-20'
+  );
 
-    const h4 = document.createElement('h4');
-    h4.classList.add(
-      'w-60',
-      'truncate',
-      'text-lg',
-      'lg:text-xl',
-      'lg:z-30',
-      'font-semibold',
-      'mb-1',
-      'break-words'
-    );
-    h4.innerHTML = `${title}`;
+  const divBody = document.createElement('div');
+  divBody.setAttribute('id', 'body');
+  divBody.classList.add(
+    'lg:absolute',
+    'flex',
+    'flex-col',
+    'ml-2',
+    'lg:ml-4',
+    'lg:mt-80',
+    'lg:text-white',
+    'lg:pt-0');
 
-    const spanUno = document.createElement('span');
-    spanUno.classList.add(
-      'inline-block',
-      'lg:hidden'
-    );
-    spanUno.innerHTML = `(${annio})`;
+  const h4 = document.createElement('h4');
+  h4.classList.add(
+    'w-60',
+    'truncate',
+    'text-lg',
+    'lg:text-xl',
+    'lg:z-30',
+    'font-semibold',
+    'mb-1',
+    'break-words'
+  );
+  h4.innerHTML = `${title}`;
 
-    const spanDos = document.createElement('span');
-    spanDos.classList.add(
-      'hidden',
-      'lg:block',
-      'text-xl'
-    );
-    spanDos.innerHTML = `${annio}`;
+  const spanUno = document.createElement('span');
+  spanUno.classList.add(
+    'inline-block',
+    'lg:hidden'
+  );
+  spanUno.innerHTML = `(${annio})`;
 
-    const pGeneros = document.createElement('p');
-    pGeneros.classList.add(
-      'lg:hidden',
-      'mb-1',
-      'text-xs',
-      'text-gray-300',
-      'font-bold');
+  const spanDos = document.createElement('span');
+  spanDos.classList.add(
+    'hidden',
+    'lg:block',
+    'text-xl'
+  );
+  spanDos.innerHTML = `${annio}`;
 
-    //ArrayGeneros.forEach(genero => pGeneros.innerHTML += genero + ' ');
+  const pGeneros = document.createElement('p');
+  pGeneros.classList.add(
+    'lg:hidden',
+    'mb-1',
+    'text-xs',
+    'text-gray-300',
+    'font-bold');
 
-    h4.append(spanUno);
-    h4.append(spanDos);
-    h4.append(pGeneros);
+  //ArrayGeneros.forEach(genero => pGeneros.innerHTML += genero + ' ');
 
-    const h5 = document.createElement('h5');
-    h5.classList.add(
-      'lg:hidden',
-      'mb-3',
-      'w-20',
-      'border-2',
-      'rounded-2xl',
-      'bg-yellow-400',
-      'text-white',
-      'text-sm',
-      'text-center',
-      'font-bold');
-    h5.innerHTML = '2h 34min';
+  h4.append(spanUno);
+  h4.append(spanDos);
+  h4.append(pGeneros);
 
-    const pOverview = document.createElement('p');
-    pOverview.setAttribute('id', 'job');
-    pOverview.classList.add(
-      'lg:hidden',
-      'pr-5',
-      'text-sm',
-      'text-justify',
-      'leading-none',
-      'text-gray-500',
-      'font-serif'
-    );
-    pOverview.innerHTML = `${overview}`;
+  const h5 = document.createElement('h5');
+  h5.classList.add(
+    'lg:hidden',
+    'mb-3',
+    'w-20',
+    'border-2',
+    'rounded-2xl',
+    'bg-yellow-400',
+    'text-white',
+    'text-sm',
+    'text-center',
+    'font-bold');
+  h5.innerHTML = '2h 34min';
 
-    const divUltimo = document.createElement('div');
-    divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end');
-    divUltimo.innerHTML = `
-        <img
-        alt="avatar"
-        class="lg:hidden mt-2 md:mt-10 w-6 h-6"
-        src="https://img.icons8.com/windows/32/000000/circled-chevron-down--v1.png"
-      />
-      
-      <img class="lg:hidden mt-2 md:mt-10 w-5 h-5" src="https://img.icons8.com/ios/50/000000/star--v1.png"/>
-        `
+  const pOverview = document.createElement('p');
+  pOverview.setAttribute('id', 'job');
+  pOverview.classList.add(
+    'lg:hidden',
+    'pr-5',
+    'text-sm',
+    'text-justify',
+    'leading-none',
+    'text-gray-500',
+    'font-serif'
+  );
+  pOverview.innerHTML = `${overview}`;
 
-    divBody.append(h4);
-    divBody.append(h5);
-    divBody.append(pOverview);
-    divBody.append(divUltimo);
+  const divUltimo = document.createElement('div');
+  divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end');
+  divUltimo.innerHTML = `
+      <img
+      alt="avatar"
+      class="lg:hidden mt-2 md:mt-10 w-6 h-6"
+      src="https://img.icons8.com/windows/32/000000/circled-chevron-down--v1.png"
+    />
+    
+    <img class="lg:hidden mt-2 md:mt-10 w-5 h-5" src="https://img.icons8.com/ios/50/000000/star--v1.png"/>
+      `
 
-    divHeader.append(imgPoster);
-    divHeader.append(imgPlay);
-    divHeader.append(divTercero);
-    divHeader.append(divBody);
+  divBody.append(h4);
+  divBody.append(h5);
+  divBody.append(pOverview);
+  divBody.append(divUltimo);
 
-    divPrimero.append(divHeader);
-    a.append(divPrimero);
+  divHeader.append(imgPoster);
+  divHeader.append(imgPlay);
+  divHeader.append(divTercero);
+  divHeader.append(divBody);
 
-    return a
+  divPrimero.append(divHeader);
+  a.append(divPrimero);
 
-  }
+  return a
 
-  /* Función para conseguir los genéros de TMDB y de una pelicula en especifico*/
-  /*function listaDeGeneros(genre_ids) {
-    let generos = [];
-    try {
-      API_GENRES = 'https://api.themoviedb.org/3/genre/movie/list?api_key=6a0146a28beebb735c989c58123bf76b&language=en-US';
-      fetch(API_GENRES).then(res => res.json())
-        .then(function (data) {
-          data.genres.forEach(function (genre) {
-            genre_ids.forEach(function (id) {
-              if (genre.id == id) {
-                generos.push(genre.name)
-              }
-            })
+}
 
-          });
-        });
-    } catch (error) {
-      return;
-    }
-    return generos;
-  }
-  function CambiarTitulo(){
-    let nombre;
-    if(genero=="28"){
-      nombre= "Películas de Acción"
-    }else if(genero=="12"){
-      nombre= "Películas de Aventura"
-    }else if(genero=="35"){
-      nombre= "Películas de Comedia"
-    }else if(genero=="16"){
-     nombre= "Películas Animadas"
-   }else if(genero=="18"){
-     nombre= "Películas de Drama"
-   }else if(genero=="36"){
-     nombre= "Películas de Historia"
-   }else if(genero=="10749"){
-     nombre= "Películas de Romance"
-   }else if(genero=="10402"){
-    nombre= "Películas de Música"
-  }
-   console.log(nombre);
-   document.getElementById('tituloGenero').innerHTML = nombre;
-  }*/
+document.addEventListener('DOMContentLoaded', function () {
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var urlBuscar = urlParams.get('buscar');
+
+  buscar(urlBuscar)
 })
+
+
+
