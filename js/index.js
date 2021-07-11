@@ -178,6 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'pr-5',
       'text-sm',
       'text-justify',
+      'line-clamp-5', //IMPORTANTE PARA RECORTAR EL TEXTO A 5 LINEAS
       'leading-none',
       'text-gray-500',
       'font-serif'
