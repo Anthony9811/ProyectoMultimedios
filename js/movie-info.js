@@ -40,14 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 sm:h-48"
                 src="https://image.tmdb.org/t/p/w1280${data.backdrop_path}"/>
         
-                <div id="header" class="flex absolute mt-10">
+                <div id="header" class="flex absolute mt-10 flex-col md:flex-row">
                     <img
                         alt="${data.original_title} poster"
                         id="cuadro"
                         class="
                         h-96 
                         w-45 
-                        ml-20"
+                        ml-20
+                        max-w-xs"
                         src="https://image.tmdb.org/t/p/original${data.poster_path}"/>
                     
                 <div id="body" class="
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 flex-col 
                 ml-10
                 lg:w-auto">
-                    <h4 class="text-6xl text-white font-semibold mb-1">
+                    <h4 class="mt-10 md:mt-0 text-4xl md:text-6xl text-white font-semibold mb-1">
                     ${data.original_title} <span class="inline-block "> (${annio}) </span>
                     </h4>
         
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <li>
                           <h5 class="text-white font-semibold">`
                             //Acción, Drama, Violencia
-                            genres.forEach(genre => movieDetailsString+= genre.name);
+                            genres.forEach(genre => movieDetailsString+= genre.name +" ");
                           movieDetailsString +=`
                           </h5>
                         </li>
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       text-justify 
                       leading-none 
                       text-white
+                      mb-20
                       ">
                        ${data.overview}
                       </p>
