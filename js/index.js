@@ -2,6 +2,15 @@ function enviarBuscador(){
   location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
 }
 
+function menuResponsive(){
+  const boton = document.querySelector(".menucito");
+  const barra = document.querySelector(".barra-Lateral");
+
+  boton.addEventListener("click", () =>{
+    barra.classList.toggle("-translate-x-full");
+  })
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
   const BASE_URL = 'https://api.themoviedb.org/3';
@@ -22,10 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(function (data) {
         data.results.forEach(element => {
           if (element.title != undefined) {
-            /*const generos = listaDeGeneros(element.genre_ids);
-            generos.forEach(function (genero) {
-              console.log(genero);
-            })*/
             const card = generarTarjeta(element.id, element.title, element.poster_path, element.overview, element.release_date/*, generos*/)
             divDeDestino.appendChild(card);
           }
@@ -214,25 +219,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  /* Función para conseguir los genéros de TMDB y de una pelicula en especifico*/
-  /*function listaDeGeneros(genre_ids) {
-    let generos = [];
-    try {
-      API_GENRES = 'https://api.themoviedb.org/3/genre/movie/list?api_key=6a0146a28beebb735c989c58123bf76b&language=en-US';
-      fetch(API_GENRES).then(res => res.json())
-        .then(function (data) {
-          data.genres.forEach(function (genre) {
-            genre_ids.forEach(function (id) {
-              if (genre.id == id) {
-                generos.push(genre.name)
-              }
-            })
-
-          });
-        });
-    } catch (error) {
-      return;
-    }
-    return generos;
-  }*/
 })

@@ -1,3 +1,12 @@
+function menuResponsive(){
+  const boton = document.querySelector(".menucito");
+  const barra = document.querySelector(".barra-Lateral");
+
+  boton.addEventListener("click", () =>{
+    barra.classList.toggle("-translate-x-full");
+  })
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
     const BASE_URL = 'https://api.themoviedb.org/3';
@@ -172,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'pr-5',
         'text-sm',
         'text-justify',
+        'line-clamp-5', //IMPORTANTE PARA RECORTAR EL TEXTO A 5 LINEAS
         'leading-none',
         'text-gray-500',
         'font-serif'
@@ -249,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
      console.log(nombre);
      document.getElementById('tituloGenero').innerHTML = nombre;
+     document.getElementById('tipoDeGenero').innerHTML = nombre;
     }
   })
   

@@ -12,13 +12,12 @@
 
 <body class="bg-blueGray-900">
 
-  <!-- COMENTARIO DE PRUEBA PARA GITHUB-->
-
   <!-- ENCABEZADO-->
   <nav id="header" class="
   w-full
   z-30
-  top-10
+  fixed
+  top-0
   lg:fixed
   lg:top-0
   lg:z-40
@@ -26,18 +25,17 @@
   py-1
   lg:px-16
   bg-white
-  md:bg-blueGray-300
+  bg-blueGray-300
   shadow-lg
   border-b border-blue-400
 ">
     <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
-      <label for="menu-toggle" class="cursor-pointer md:hidden block">
-        <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          viewBox="0 0 20 20">
-          <title>menu</title>
+      <div class="menucito cursor-pointer md:hidden block">
+        <svg class="menucito fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          viewBox="0 0 20 20" onclick="menuResponsive()">
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
         </svg>
-      </label>
+      </div>
 
       <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
         <nav>
@@ -160,7 +158,7 @@
         <div class="auth flex items-center ml-28 text-xl w-full md:w-full md:hidden">
           <div class="group inline-block">
             <button class="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32">
-              <span class="pr-1 font-semibold flex-1">Populares</span>
+              <span class="pr-1 font-semibold flex-1">Películas</span>
               
             </button>
           </div>
@@ -195,49 +193,173 @@ place-content-center
         </div>
       </div>
     </div>
+
+    <!-- BARRA LATERAL PARA VISTA MÓVIL -->
+<div class="
+barra-Lateral
+absolute 
+min-h-screen 
+mt-0.5 
+flex 
+z-10 
+space-y-6 
+border-2 
+border-blue-400
+-left-1
+transform
+-translate-x-full
+transition
+duration-300
+ease-in-out
+">
+  <div class="bg-blueGray-900 opacity-90 w-64 text-white text-xl space-x-5">
+    <a href="index.html" class="flex items center space-x-5">
+      <img class="" src="https://img.icons8.com/nolan/64/hitfilm.png" />
+      <span class="text-xl mt-4">Grupo 3</span>
+    </a>
+
+    <nav>
+      <a href="" class="block py-2.5 px-4 transition duration-200 hover:bg-blueGray-700">Películas
+        <span></span>
+      </a>
+      <a href="" class="block py-2.5 px-4 transition duration-200 hover:bg-blueGray-700">Series
+        <span>
+
+        </span>
+      </a>
+      <a class="block px-4">
+
+<!-- COMIENZA EL DROPDOWN DE LOS GÉNEROS-->
+<div class="group inline-block w-full relative transition duration-200 hover:bg-blueGray-700">
+  <button
+    class="bg-transparent lg:text-xl py-2 rounded inline-flex items-center"
+  >
+    <span class="pr-1 flex-1">Géneros</span>
+    <span>
+      <svg
+        class="fill-current h-4 w-4 transform group-hover:-rotate-180 mt-1
+        transition duration-150 ease-in-out"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+        />
+      </svg>
+    </span>
+  </button>
+  <ul
+    class="bg-gray-800 border rounded-sm transform scale-0 group-hover:scale-100 absolute 
+  transition duration-150 ease-in-out origin-top min-w-32"
+  >
+  <a href = "/genero.html?id=28" id="28"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Acción</li></a>
+  <a href = "/genero.html?id=12" id="12"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Aventura</li></a>
+  <a href = "/genero.html?id=35" id="35"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Comedia</li></a>
+  <a href = "/genero.html?id=16" id="16"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Animada</li></a>
+  <a href = "/genero.html?id=18" id="18"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Drama</li></a>
+  <a href = "/genero.html?id=36" id="36"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Historia</li></a>
+  <a href = "/genero.html?id=10749" id="10749"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Romance</li></a>
+  <a href = "/genero.html?id=10402" id="10402"><li class="rounded-sm text-white px-3 py-1 hover:bg-gray-500">Musica</li></a>
+  </ul>
+</div>
+
+<style>
+  /* since nested groupes are not supported we have to use 
+     regular css for the nested dropdowns 
+  */
+  li>ul                 { transform: translatex(100%) scale(0) }
+  li:hover>ul           { transform: translatex(101%) scale(1) }
+  li > button svg       { transform: rotate(-90deg) }
+  li:hover > button svg { transform: rotate(-270deg) }
+
+  /* Below styles fake what can be achieved with the tailwind config
+     you need to add the group-hover variant to scale and define your custom
+     min width style.
+     See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+     for implementation with config file
+  */
+  .group:hover .group-hover\:scale-100 { transform: scale(1) }
+  .group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
+  .scale-0 { transform: scale(0) }
+  .min-w-32 { min-width: 8rem }
+</style>
+            <!-- TERMINA EL DROPDOWN DE LOS GÉNEROS-->
+
+
+      </a>
+    </nav>
+  </div>
+
+</div>
   </nav>
   <!-- FIN DE ENCABEZADO-->
 
   <main>
     <div id="populares" class="
+    mt-20
     min-h-screen 
     md:w-full
-    flex 
-    flex-col
+    lg:flex
     lg:flex-row
     lg:flex-wrap
     lg:justify-center
     lg:mt-28 
-    last: mb-10">
-      <div class="hidden lg:block ml-20 absolute text-3xl text-white font-bold border-b-2 w-10/12">
+    last: mb-14">
+      <div class="
+      md:block
+       ml-3
+       lg:ml-20 
+       lg:absolute
+       text-3xl
+       text-white 
+       font-bold 
+       border-b-2 
+       w-10/12">
         <span class="">Películas Populares</span>
       </div>
     </div>
+
     <div id="mejorValoradas" class="
   min-h-screen 
   md:w-full
-  flex 
-  flex-col
+  lg:flex
   lg:flex-row
   lg:flex-wrap
   lg:justify-center
   lg:mt-20 
   last: mb-14">
-      <div class="hidden lg:block ml-20 absolute text-3xl text-white font-bold border-b-2 w-10/12">
+      <div class="
+       md:block
+       ml-3
+       lg:ml-20 
+       lg:absolute
+       text-3xl
+       text-white 
+       font-bold 
+       border-b-2 
+       w-10/12">
         <span class="">Las más valoradas</span>
       </div>
     </div>
     <div id="proximamente" class="
-  min-h-screen 
-  md:w-full
-  flex 
-  flex-col
-  lg:flex-row
-  lg:flex-wrap
-  lg:justify-center
-  lg:mt-20 
-  last: mb-14">
-      <div class="hidden lg:block ml-20 absolute text-3xl text-white font-bold border-b-2 w-10/12">
+    min-h-screen 
+    md:w-full
+    lg:flex
+    lg:flex-row
+    lg:flex-wrap
+    lg:justify-center
+    lg:mt-20 
+    last: mb-14">
+      <div class="
+       md:block
+       ml-3
+       lg:ml-20 
+       lg:absolute
+       text-3xl
+       text-white 
+       font-bold 
+       border-b-2 
+       w-10/12">
         <span class="">Próximamente en cines</span>
       </div>
     </div>
@@ -255,13 +377,13 @@ place-content-center
   bg-white
   shadow-lg
   overflow-auto
-  border-t 
+  border-t
+  bg-blueGray-300 
   border-blue-400">
-    <a class="ml-2 w-10 h-10" href="#"><img src="https://img.icons8.com/office/40/000000/clapperboard.png" /></a>
-    <a class="h-10 w-10 pb-1 pt-1" href="#"><img
-        src="https://img.icons8.com/offices/30/000000/circled-down-2.png" /></a>
-    <a class="w-8 h-7 pb-1 pt-1" href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/time-span.png" /></a>
-    <a class="w-10 h-10 pb-1 mr-3 " href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/user.png" /></a>
+    <a class="ml-2 w-10 h-10" href="index.html"><img src="https://img.icons8.com/office/40/000000/clapperboard.png" /></a>
+    <a class="h-10 w-10 mb-1 " href="series.html"><img src="https://img.icons8.com/ultraviolet/80/000000/homer-simpson.png"/></a>
+    <a class="w-8 h-7 mb-1 pt-1" href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/time-span.png" /></a>
+    <a class="w-10 h-10 pb-1 mr-3 " href="nosotros.html"><img src="https://img.icons8.com/ultraviolet/40/000000/about-us-male.png"/></a>
 
   </nav>
 

@@ -5,6 +5,15 @@ function enviarBuscador(){
   location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
 }
 
+function menuResponsive(){
+  const boton = document.querySelector(".menucito");
+  const barra = document.querySelector(".barra-Lateral");
+
+  boton.addEventListener("click", () =>{
+    barra.classList.toggle("-translate-x-full");
+  })
+}
+
 function buscar(idBuscar) {
   console.log(idBuscar)
   var palabraABuscar = document.getElementById("buscando").value || idBuscar
@@ -177,6 +186,7 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
     'pr-5',
     'text-sm',
     'text-justify',
+    'line-clamp-5', //IMPORTANTE PARA RECORTAR EL TEXTO A 5 LINEAS
     'leading-none',
     'text-gray-500',
     'font-serif'

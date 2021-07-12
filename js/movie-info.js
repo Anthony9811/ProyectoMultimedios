@@ -1,3 +1,11 @@
+function menuResponsive(){
+  const boton = document.querySelector(".menucito");
+  const barra = document.querySelector(".barra-Lateral");
+
+  boton.addEventListener("click", () =>{
+    barra.classList.toggle("-translate-x-full");
+  })
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
