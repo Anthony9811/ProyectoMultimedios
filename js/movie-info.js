@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 w-full
                 md:w-auto">
                     
-                <div class="block md:hidden w-full h-24 opacity-90 bg-blueGray-900 top-7 relative"></div>
+                <div class="block md:hidden w-full h-32 opacity-90 bg-blueGray-900 top-7 relative"></div>
                     
                     <h4 class="
                     text-xl
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
                     <div>
                     <div class="relative block md:hidden bg-blueGray-700 opacity-10 border-1 w-full h-10 top-7"></div>
-                      <ul class="list-disc absolute md:relative lg:sticky top-72 md:top-0 flex mt-9 md:mt-2 text-white ml-10 md:ml-5">
+                      <ul class="list-disc absolute md:relative lg:sticky top-72 md:top-0 flex mt-16 md:mt-2 text-white ml-10 md:ml-5">
                         <li>
                           <h5 class="text-white font-semibold">`
                             genres.forEach(genre => movieDetailsString+= genre.name +" ");
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       left-24
                       flex
                       top-64
-                      mt-1.5
+                      mt-8
                       bg-green-500
                       border-1 rounded-full
                       text-center
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       ${data.vote_average}
                       </div>
 
-                          <span class="ml-6 relative bottom-1 md:hidden text-white font-semibold">Puntuación De Usuario</span>
+                          <span class="ml-10 relative bottom-1 md:hidden text-white font-semibold">Puntuación De Usuario</span>
                       </div>
                     </div>
                     
