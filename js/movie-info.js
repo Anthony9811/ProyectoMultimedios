@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 ml-0
                 md:ml-10
                 w-full
-                h-10
                 md:w-auto">
                     
                 <div class="block md:hidden w-full h-24 opacity-90 bg-blueGray-900 top-7 relative"></div>
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
                     <div>
                     <div class="relative block md:hidden bg-blueGray-700 opacity-10 border-1 w-full h-10 top-7"></div>
-                      <ul class="list-disc absolute md:relative lg:sticky top-72 md:top-0 flex mt-9 md:mt-2  text-white ml-10 md:ml-5">
+                      <ul class="list-disc absolute md:relative lg:sticky top-72 md:top-0 flex mt-9 md:mt-2 text-white ml-10 md:ml-5">
                         <li>
                           <h5 class="text-white font-semibold">`
                             genres.forEach(genre => movieDetailsString+= genre.name +" ");
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       ${data.vote_average}
                       </div>
 
-                          <span class="ml-6 md:hidden text-white font-semibold">Puntuación De Usuario</span>
+                          <span class="ml-6 relative bottom-1 md:hidden text-white font-semibold">Puntuación De Usuario</span>
                       </div>
                     </div>
                     
@@ -188,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         Descripción
                       </p>
         
+                      
                       <p id="overview" class="
                       pr-5 
                       text-xl
