@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         });
     }
-    function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
+    function generarTarjeta(id, title, poster_path, overview, fecha) {
       const annio = fecha.substr(0, 4);
   
       const a = document.createElement('a');

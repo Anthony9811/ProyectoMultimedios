@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const divPrimero = document.createElement('div');
     divPrimero.classList.add(
       'sm:max-w-2xl',
-      'md:max-w-6xl',
+      'md:w-full',
       'bg-white',
       'border-2',
       'border-gray-300',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     imgPoster.setAttribute('alt', `${title} poster`);
     imgPoster.classList.add(
       'h-60',
-      'w-32',
+      'w-45',
       'lg:z-10',
       'lg:w-64',
       'lg:h-96',
@@ -88,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
       'w-15',
       'h-15',
       'absolute',
-      'ml-8',
+      'ml-14',
+      'md:ml-8',
       'md:mt-16',
       'mt-20',
       'opacity-9'
