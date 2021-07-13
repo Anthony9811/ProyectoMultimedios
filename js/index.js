@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const divPrimero = document.createElement('div');
     divPrimero.classList.add(
-      'max-w-2xl',
+      'sm:max-w-2xl',
       'md:max-w-6xl',
       'bg-white',
       'border-2',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     imgPoster.setAttribute('alt', `${title} poster`);
     imgPoster.classList.add(
       'h-60',
-      'w-45',
+      'w-32',
       'lg:z-10',
       'lg:w-64',
       'lg:h-96',
@@ -88,8 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'w-15',
       'h-15',
       'absolute',
-      'ml-14',
-      'md:ml-8',
+      'ml-8',
       'md:mt-16',
       'mt-20',
       'opacity-9'
@@ -191,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pOverview.innerHTML = `${overview}`;
 
     const divUltimo = document.createElement('div');
-    divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end');
+    divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end','mr-5','mt-1');
     divUltimo.innerHTML = `
         <img
         alt="avatar"
