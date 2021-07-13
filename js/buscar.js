@@ -47,21 +47,21 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
   a.setAttribute('href', `/movie-info.html?id=${id}`)
   a.classList.add('h-23', 'bg-transparent',
     'flex', 'justify-center', 'lg:inline-block',
-    'items-start', 'mt-8', 'lg:mt-12', 'md:mx-5');
+    'items-start', 'mt-5', 'lg:mt-12', 'md:mx-5');
 
   const divPrimero = document.createElement('div');
   divPrimero.classList.add(
-    'max-w-2xl',
-    'md:max-w-6xl',
-    'bg-white',
-    'border-2',
-    'border-gray-300',
-    'lg:bg-transparent',
-    'p-1',
-    'lg:p-0',
-    'rounded-md',
-    'tracking-wide',
-    'shadow-lg'
+      'sm:max-w-2xl',
+      'md:max-w-6xl',
+      'bg-white',
+      'border-2',
+      'border-gray-300',
+      'lg:bg-transparent',
+      'p-1',
+      'lg:p-0',
+      'rounded-md',
+      'tracking-wide',
+      'shadow-lg'
   );
 
   const divHeader = document.createElement('div');
@@ -194,7 +194,7 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
   pOverview.innerHTML = `${overview}`;
 
   const divUltimo = document.createElement('div');
-  divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end');
+  divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end','mr-5','mt-1');
   divUltimo.innerHTML = `
       <img
       alt="avatar"
