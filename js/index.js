@@ -1,5 +1,9 @@
 function enviarBuscador() {
-  location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
+  location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value 
+}
+
+function enviarBuscadorMini() {
+  location.href = "/buscar.html?buscar=" + document.getElementById("buscandoMini").value
 }
 
 function menuResponsive() {

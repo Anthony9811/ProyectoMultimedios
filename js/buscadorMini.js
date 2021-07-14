@@ -1,10 +1,6 @@
 const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-function enviarBuscador() {
-  location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
-}
-
 function enviarBuscadorMini() {
   location.href = "/buscar.html?buscar=" + document.getElementById("buscandoMini").value
 }
@@ -20,7 +16,7 @@ function menuResponsive() {
 
 function buscar(idBuscar) {
   console.log(idBuscar)
-  var palabraABuscar = document.getElementById("buscando").value || idBuscar
+  var palabraABuscar = document.getElementById("buscandoMini").value || idBuscar
 
 
   const API_SEARCH_URL = BASE_URL + '/search/movie?' + API_KEY + '&language=es-ES&page=1';
