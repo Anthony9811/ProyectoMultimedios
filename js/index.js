@@ -1,12 +1,12 @@
-function enviarBuscador(){
+function enviarBuscador() {
   location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
 }
 
-function menuResponsive(){
+function menuResponsive() {
   const boton = document.querySelector(".menucito");
   const barra = document.querySelector(".barra-Lateral");
 
-  boton.addEventListener("click", () =>{
+  boton.addEventListener("click", () => {
     barra.classList.toggle("-translate-x-full");
   })
 }
@@ -124,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function () {
     h4.classList.add(
       'w-60',
       'truncate',
+      'md:w-full',
+      'lg:w-60',
       'text-lg',
       'lg:text-xl',
       'lg:z-30',
@@ -191,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pOverview.innerHTML = `${overview}`;
 
     const divUltimo = document.createElement('div');
-    divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end','mr-5','mt-1');
+    divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end', 'mr-5', 'mt-1');
     divUltimo.innerHTML = `
         <img
         alt="avatar"

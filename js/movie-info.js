@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h4 class="
                     text-xl
                     mt-8
+                    w-52
+                    md:w-auto
                     md:mt-0
                     lg:mt-8 
                     ml-24 
@@ -139,7 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
                       absolute
                       md:h-12
                       md:w-12
-                      md:left-3
+                      md:mt-2
+                      md:left-0
                       md:top-0
                       md:relative
                       lg:top-64
@@ -177,8 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
                       text-gray-500 
                       pb-2 
                       mt-8 
-                      md:mt-0 
-                      ml-6 
+                      md:mt-2 
+                      ml-6
+                      md:ml-0 
                       lg:ml-0 
                       text-lg
                       md:font-semibold
@@ -187,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ${data.tagline}
                       </p>
         
-                      <p class="text-white text-2xl ml-6 lg:ml-0 pb-3">
+                      <p class="text-white text-2xl ml-6 md:ml-0 pb-3">
                         Descripción
                       </p>
         
@@ -200,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       text-white
                       mb-20
                       ml-6
-                      lg:ml-0
+                      md:ml-0
                       ">
                        ${data.overview}
                       </p>

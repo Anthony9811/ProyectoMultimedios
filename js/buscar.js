@@ -1,15 +1,15 @@
 const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-function enviarBuscador(){
+function enviarBuscador() {
   location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
 }
 
-function menuResponsive(){
+function menuResponsive() {
   const boton = document.querySelector(".menucito");
   const barra = document.querySelector(".barra-Lateral");
 
-  boton.addEventListener("click", () =>{
+  boton.addEventListener("click", () => {
     barra.classList.toggle("-translate-x-full");
   })
 }
@@ -17,7 +17,7 @@ function menuResponsive(){
 function buscar(idBuscar) {
   console.log(idBuscar)
   var palabraABuscar = document.getElementById("buscando").value || idBuscar
-  
+
 
   const API_SEARCH_URL = BASE_URL + '/search/movie?' + API_KEY + '&language=es-ES&page=1';
   const API_Buscar_URL = API_SEARCH_URL + '&query=' + palabraABuscar
@@ -47,21 +47,22 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
   a.setAttribute('href', `/movie-info.html?id=${id}`)
   a.classList.add('h-23', 'bg-transparent',
     'flex', 'justify-center', 'lg:inline-block',
-    'items-start', 'mt-5', 'lg:mt-12', 'md:mx-5');
+    'items-start', 'mt-5', 'md:mt-10', 'lg:mt-12', 'md:mx-5');
 
   const divPrimero = document.createElement('div');
   divPrimero.classList.add(
-      'sm:max-w-2xl',
-      'md:max-w-6xl',
-      'bg-white',
-      'border-2',
-      'border-gray-300',
-      'lg:bg-transparent',
-      'p-1',
-      'lg:p-0',
-      'rounded-md',
-      'tracking-wide',
-      'shadow-lg'
+    'sm:max-w-2xl',
+    'md:w-full',
+    'lg:max-w-6xl',
+    'bg-white',
+    'border-2',
+    'border-gray-300',
+    'lg:bg-transparent',
+    'p-1',
+    'lg:p-0',
+    'rounded-md',
+    'tracking-wide',
+    'shadow-lg'
   );
 
   const divHeader = document.createElement('div');
@@ -126,6 +127,8 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
   const h4 = document.createElement('h4');
   h4.classList.add(
     'w-60',
+    'md:w-full',
+    'lg:w-60',
     'truncate',
     'text-lg',
     'lg:text-xl',
@@ -194,7 +197,7 @@ function generarTarjeta(id, title, poster_path, overview, fecha/*, generos*/) {
   pOverview.innerHTML = `${overview}`;
 
   const divUltimo = document.createElement('div');
-  divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end','mr-5','mt-1');
+  divUltimo.classList.add('lg:hidden', 'flex', 'space-x-2', 'justify-end', 'mr-5', 'mt-1');
   divUltimo.innerHTML = `
       <img
       alt="avatar"
