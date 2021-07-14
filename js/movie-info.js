@@ -1,38 +1,38 @@
-function enviarBuscador(){
+function enviarBuscador() {
   location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
 }
 
-function menuResponsive(){
+function menuResponsive() {
   const boton = document.querySelector(".menucito");
   const barra = document.querySelector(".barra-Lateral");
 
-  boton.addEventListener("click", () =>{
+  boton.addEventListener("click", () => {
     barra.classList.toggle("-translate-x-full");
   })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
-    const BASE_URL = 'https://api.themoviedb.org/3/movie/';
-    
-    
-    //El id que viene por el link
-    const queryString = window.location.search;
-    console.log(queryString);
-    const ID = queryString.substring( queryString.indexOf('=') + 1 );
-    
-    const API_URL = BASE_URL + ID + '?' + API_KEY +'&language=es-ES';
-    console.log(API_URL);
-    verDetalles(API_URL);
-    
-    function verDetalles(url) {
-        const movieInfo = document.getElementById('movie-info');
-        fetch(url).then(res => res.json())
-        .then(function(data){
-            const genres = data.genres;
-            const annio = data.release_date.substr(0,4);
-            console.log(genres);
-            let movieDetailsString = `
+  const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
+  const BASE_URL = 'https://api.themoviedb.org/3/movie/';
+
+
+  //El id que viene por el link
+  const queryString = window.location.search;
+  console.log(queryString);
+  const ID = queryString.substring(queryString.indexOf('=') + 1);
+
+  const API_URL = BASE_URL + ID + '?' + API_KEY + '&language=es-ES';
+  console.log(API_URL);
+  verDetalles(API_URL);
+
+  function verDetalles(url) {
+    const movieInfo = document.getElementById('movie-info');
+    fetch(url).then(res => res.json())
+      .then(function (data) {
+        const genres = data.genres;
+        const annio = data.release_date.substr(0, 4);
+        console.log(genres);
+        let movieDetailsString = `
             <div 
             class="
               w-full
@@ -108,16 +108,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     </h4>
         
                     <div>
-                    <div class="relative block md:hidden bg-blueGray-700 opacity-10 border-1 w-full h-10 top-7"></div>
+                    <div class="relative block md:hidden bg-blueGray-700 opacity-10 border-1 w-full h-14 top-7"></div>
                       <ul class="list-disc absolute md:relative lg:sticky top-72 md:top-0 flex mt-16 md:mt-2 text-white ml-10 md:ml-5">
                         <li>
                           <h5 class="text-white font-semibold">`
-                            genres.forEach(genre => movieDetailsString+= genre.name +" ");
-                          movieDetailsString +=`
+        genres.forEach(genre => movieDetailsString += genre.name + " ");
+        movieDetailsString += `
                           </h5>
                         </li>
         
-                        <li class="ml-7">
+                        <li class="ml-5">
                           <h6 class="text-white font-semibold">
                             ${data.runtime} mins
                           </h6>
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             </div>
           </div>`;
-          movieInfo.innerHTML += movieDetailsString;
-    });
-    }
+        movieInfo.innerHTML += movieDetailsString;
+      });
+  }
 })
