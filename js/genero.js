@@ -7,6 +7,10 @@ function menuResponsive(){
   })
 }
 
+function enviarBuscador(){
+  location.href = "/buscar.html?buscar=" + document.getElementById("buscando").value
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const API_KEY = 'api_key=6a0146a28beebb735c989c58123bf76b';
     const BASE_URL = 'https://api.themoviedb.org/3';
