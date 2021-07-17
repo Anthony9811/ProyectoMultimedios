@@ -249,26 +249,36 @@ document.addEventListener('DOMContentLoaded', function () {
     return generos;
   }*/
   function CambiarTitulo() {
+    const NombreBase = "Películas de ";
+    let NombreFinal;
     let nombre;
     if (genero == "28") {
-      nombre = "Películas de Acción"
+      nombre = "Acción"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "12") {
-      nombre = "Películas de Aventura"
+      nombre = "Aventura"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "35") {
-      nombre = "Películas de Comedia"
+      nombre = "Comedia"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "16") {
-      nombre = "Películas Animadas"
+      nombre = "Animadas"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "18") {
-      nombre = "Películas de Drama"
+      nombre = "Drama"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "36") {
-      nombre = "Películas de Historia"
+      nombre = "Historia"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "10749") {
-      nombre = "Películas de Romance"
+      nombre = "Romance"
+      NombreFinal= NombreBase+nombre;
     } else if (genero == "10402") {
-      nombre = "Películas de Música"
+      nombre = "Música"
+      NombreFinal= NombreBase+nombre;
     }
     console.log(nombre);
-    document.getElementById('tituloGenero').innerHTML = nombre;
+    document.getElementById('tituloGenero').innerHTML = NombreFinal;
     document.getElementById('tipoDeGenero').innerHTML = nombre;
   }
 })
