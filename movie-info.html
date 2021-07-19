@@ -5,12 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://code.jquery.com/jquery-1.11.0.js" integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
-    crossorigin="anonymous"></script>
-  <script src="js/lightslider.js"></script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="build/style.css" />
-  <link rel="stylesheet" href="css/lightslider.css" />
   <title>Document</title>
 </head>
 
@@ -53,13 +49,6 @@
               <a href="index.html"
                 class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
                 Películas
-              </a>
-            </div>
-
-            <div class="inline-block relative">
-              <a href="series.html"
-                class="bg-transparent text-gray-700 font-semibold lg:text-xl py-2 px-4 rounded inline-flex items-center">
-                <span>Series</span>
               </a>
             </div>
 
@@ -205,11 +194,6 @@ ease-in-out
     <nav>
       <a href="" class="block py-2.5 px-4 transition duration-200 hover:bg-blueGray-700">Películas
         <span></span>
-      </a>
-      <a href="" class="block py-2.5 px-4 transition duration-200 hover:bg-blueGray-700">Series
-        <span>
-
-        </span>
       </a>
       <a class="block px-4">
 
@@ -372,8 +356,7 @@ ease-in-out
    bg-blueGray-300 
    border-blue-400">
      <a class="ml-2 w-10 h-10" href="index.html"><img src="https://img.icons8.com/office/40/000000/clapperboard.png" /></a>
-     <a class="h-10 w-10 mb-1 " href="series.html"><img src="https://img.icons8.com/ultraviolet/80/000000/homer-simpson.png"/></a>
-     <a class="w-8 h-7 mb-1 pt-1" href="#"><img src="https://img.icons8.com/ultraviolet/40/000000/time-span.png" /></a>
+     <a class="w-10 h-10" href="https://www.themoviedb.org/documentation/api"><img src="https://img.icons8.com/ultraviolet/40/000000/help.png"/></a>
      <a class="w-10 h-10 pb-1 mr-3 " href="nosotros.html"><img src="https://img.icons8.com/ultraviolet/40/000000/about-us-male.png"/></a>
  
    </nav>
@@ -388,10 +371,10 @@ ease-in-out
             <a href="nosotros.html" class="font-bold text-black uppercase mb-2">Acerca de</a>
           </div>
           <div class="flex flex-col">
-            <a href="#" class="font-bold text-black uppercase mt-0 mb-2">Ayuda</a>
+            <a href="https://www.themoviedb.org/documentation/api" class="font-bold text-black uppercase mt-0 mb-2">Ayuda</a>
           </div>
           <div class="flex flex-col">
-            <a href="#" class="font-bold text-black uppercase mt-0 mb-2">Contacto</a>
+            <a href="nosotros.html" class="font-bold text-black uppercase mt-0 mb-2">Contacto</a>
           </div>
 
         </div>
@@ -465,35 +448,6 @@ ease-in-out
     </div>
   </footer>
   <script src="/js/movie-info.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#lightSlider").lightSlider({
-        item: 3,
-        loop: false,
-        slideMove: 2,
-        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
-        responsive: [
-          {
-            breakpoint: 800,
-            settings: {
-              item: 3,
-              slideMove: 1,
-              slideMargin: 6,
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              item: 2,
-              slideMove: 1
-            }
-          }
-        ]
-      });
-    });
-  </script>
 
 </body>
 
